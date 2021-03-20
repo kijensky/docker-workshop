@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: todo-app
+  labels:
+    app: todo
+spec:
+  containers:
+    - name: app
+      image: clvdemo1/todo:latest
+      ports:
+        - name: todo-port
+          containerPort: 3000
+          protocol: TCP
