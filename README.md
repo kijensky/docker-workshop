@@ -121,10 +121,10 @@ docker logs -f <container name|container id>
 ## Multi-Container App
 
 ```
-docker network create todo-app
+docker network create todo-net
 
 docker run -d \
-    --network todo --network-alias mysql \
+    --network todo-net --network-alias mysql \
     -v todo-mysql-data:/var/lib/mysql \
     -e MYSQL_ROOT_PASSWORD=secret \
     -e MYSQL_DATABASE=todos \
@@ -132,7 +132,7 @@ docker run -d \
 
 docker run -dp 3000:3000 \
   -w /app -v "$(pwd):/app" \
-  --network todo \
+  --network todo-net \
   --name todo \
   -e MYSQL_HOST=mysql \
   -e MYSQL_USER=root \
