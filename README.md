@@ -30,16 +30,16 @@ docker build -t todo .
 docker history todo
 ```
 
+## Spuštění
+
+```
+docker run -d -p 3000:3000 todo
+```
+
 ## Size
 
 ```
 docker ps -sa
-```
-
-## Spuštění
-
-```
-docker run –d -p 3000:3000 todo
 ```
 
 ## Aktualizace
@@ -52,15 +52,15 @@ docker images
 docker stop <container id>
 docker start <container id>
 docker rm -f <container id>
-docker run –d -p 3000:3000 todo 
+docker run -d -p 3000:3000 todo 
 ```
 
 ## Nejčastěji používané příkazy
 
 ```
-docker –help
+docker -help
 docker run <image>
-docker exec -i –t <container> 
+docker exec -i -t <container> 
 docker ps (-a, -s)
 docker stop <container>
 docker start <container>
@@ -68,7 +68,7 @@ docker rm <container>
 docker rmi <image>
 docker inspect <container
 docker images
-docker image –help
+docker image -help
 docker image ls
 docker image prune
 docker image inspect <image> 
@@ -91,7 +91,7 @@ docker push YOUR-USER-NAME/<shared-image-name>:<version>
 ## Test
 
 ```
-docker run –d -p 3000:3000 YOUR-USER-NAME/<shared-image-name>:<version> 
+docker run -d -p 3000:3000 YOUR-USER-NAME/<shared-image-name>:<version> 
 ```
 
 ## Uložiště - Named Volumes
@@ -100,7 +100,7 @@ docker run –d -p 3000:3000 YOUR-USER-NAME/<shared-image-name>:<version>
 docker volume create todo-db
 docker volume --help
 docker volume inspect todo-db
-docker run –d –p 3000:3000 –v todo-db:/etc/todos YOUR-USER-NAME/<shared-image-name>:<version>
+docker run -d -p 3000:3000 -v todo-db:/etc/todos YOUR-USER-NAME/<shared-image-name>:<version>
 ```
 
 Cesta k souborům na Windows 10: `\\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes`
@@ -114,7 +114,7 @@ docker run -dp 3000:3000 \
     node:12-alpine \
     sh -c "yarn install && yarn run dev"
 
-docker logs –f <container name|container id>
+docker logs -f <container name|container id>
 
 ```
 
@@ -145,7 +145,7 @@ docker run -dp 3000:3000 \
 Ověření funkčnosti
 
 ```
-docker exec -it <mysql container id> mysql –p
+docker exec -it <mysql container id> mysql -p
 `
 show database;
 use todos;
@@ -171,12 +171,12 @@ docker-compose version
 [./samples/docker-compose.yml](./samples/docker-compose.yml)
 
 ```
-docker-compose up –d
+docker-compose up -d
 docker-compose logs -f
 docker-compose stop
 docker-compose start
 
-docker exec -it <mysql container id> mysql –p
+docker exec -it <mysql container id> mysql -p
 `
 show database;
 use todos;
@@ -190,7 +190,7 @@ docker-compose down
 ## Nejčastěji používané příkazy
 
 ```
-docker-compose –help
+docker-compose -help
 docker-compose up (-d)
 docker-compose down (--volumes)
 docker-compose logs (-f)
@@ -273,7 +273,7 @@ kubectl apply -f deploy-with-mysql-secret.yml
 
 ```
 
-## Uklid
+## Úklid
 
 ```
 kubectl delete deployment,svc mysql 
