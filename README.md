@@ -153,9 +153,6 @@ select * from todo_items;
 exit
 `
 
-docker run -it --network todo nicolaka/netshoot
-dig mysql
-cat /etc/hosts
 ```
 
 # Orchestrace
