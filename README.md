@@ -258,7 +258,7 @@ kubectl apply -f mysql.yml
 
 kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h mysql -ppassword
 `
-create database todos;
+show databases;
 `
 kubectl apply -f deploy-with-mysql.yml
 ```
