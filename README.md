@@ -55,6 +55,12 @@ docker rm -f <container id>
 docker run -d -p 3000:3000 todo 
 ```
 
+V případě problému můžete vrátit změny v kódu
+
+```
+git reset --hard origin/main
+```
+
 ## Nejčastěji používané příkazy
 
 https://docs.docker.com/reference/
@@ -160,6 +166,9 @@ exit
 ```
 
 # Orchestrace
+
+Rychlé srovnání Kubernetes a Openshift: https://www.whizlabs.com/blog/openshift-vs-kubernetes/ 
+
 
 ## Docker-Compose
 
